@@ -1,0 +1,77 @@
+#!/usr/bin/env node
+import { createRequire } from "node:module";
+import { readFileSync, writeFileSync } from "node:fs";
+
+const require = createRequire(import.meta.url);
+const { graphviz } = require("node-graphviz");
+
+let format = "svg";
+let output;
+let engine = "dot";
+let inputFile;
+let autoOutput = false;
+
+const args = process.argv.slice(2);
+
+for (let i = 0; i < args.length; i += 1) {
+  const arg = args[i];
+
+  if (arg === "-T") {
+    format = args[++i];
+    continue;
+  }
+
+  if (arg.startsWith("-T")) {
+    format = arg.slice(2);
+    continue;
+  }
+
+  if (arg === "-o") {
+    output = args[++i];
+    continue;
+  }
+
+  if (arg.startsWith("-o")) {
+    output = arg.slice(2);
+    continue;
+  }
+
+  if (arg === "-O") {
+    autoOutput = true;
+    continue;
+  }
+
+  if (arg === "-K") {
+    engine = args[++i];
+    continue;
+  }
+
+  if (arg.startsWith("-K")) {
+    engine = arg.slice(2);
+    continue;
+  }
+
+  if (!arg.startsWith("-")) {
+    inputFile = arg;
+  }
+}
+
+const source = inputFile ? readFileSync(inputFile, "utf8") : await readStdin();
+const rendered = await graphviz.layout(source, format, engine);
+const outputFile = output ?? (autoOutput && inputFile ? `${inputFile}.${format}` : undefined);
+
+if (outputFile) {
+  writeFileSync(outputFile, rendered);
+} else {
+  process.stdout.write(rendered);
+}
+
+async function readStdin() {
+  const chunks = [];
+
+  for await (const chunk of process.stdin) {
+    chunks.push(chunk);
+  }
+
+  return Buffer.concat(chunks).toString("utf8");
+}

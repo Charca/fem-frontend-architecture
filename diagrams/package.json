@@ -1,0 +1,18 @@
+{
+  "name": "fem-frontend-architecture-diagrams",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/export-static.mjs",
+    "build:docker": "STRUCTURIZR_CLI=docker node scripts/export-static.mjs",
+    "clean": "node scripts/clean.mjs",
+    "validate": "node scripts/export-static.mjs --validate-only"
+  },
+  "dependencies": {
+    "node-graphviz": "^0.1.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

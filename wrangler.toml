@@ -1,0 +1,3 @@
+name = "fem-frontend-architecture"
+pages_build_output_dir = "diagrams/dist"
+compatibility_date = "2026-05-02"

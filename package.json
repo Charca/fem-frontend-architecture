@@ -1,0 +1,13 @@
+{
+  "name": "fem-frontend-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix diagrams ci && DIAGRAMS_BASE_PATH=/diagrams npm --prefix diagrams run build",
+    "build:diagrams": "npm --prefix diagrams ci && DIAGRAMS_BASE_PATH=/diagrams npm --prefix diagrams run build",
+    "validate:diagrams": "npm --prefix diagrams ci && npm --prefix diagrams run validate"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

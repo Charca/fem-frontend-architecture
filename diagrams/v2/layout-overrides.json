@@ -1,0 +1,109 @@
+{
+  "views": {
+    "SystemContext": {
+      "elements": {
+        "User": {
+          "x": 208,
+          "y": 208
+        },
+        "Plugin Developer": {
+          "x": 958,
+          "y": 208
+        },
+        "Customer": {
+          "x": 1708,
+          "y": 208
+        },
+        "Admin System": {
+          "x": 583,
+          "y": 908
+        },
+        "Storefront": {
+          "x": 1333,
+          "y": 908
+        },
+        "Payments System": {
+          "x": 208,
+          "y": 1508
+        },
+        "Order Fulfillment System": {
+          "x": 958,
+          "y": 1508
+        },
+        "LLM Provider": {
+          "x": 1708,
+          "y": 1508
+        }
+      }
+    },
+    "AdminContainers": {
+      "elements": {
+        "User": {
+          "x": 208,
+          "y": 254
+        },
+        "Customer": {
+          "x": 208,
+          "y": 1904
+        },
+        "Plugin Developer": {
+          "x": 208,
+          "y": 1054
+        },
+        "Admin Web App": {
+          "x": 1058,
+          "y": 254
+        },
+        "Mobile App": {
+          "x": 1058,
+          "y": 804
+        },
+        "Public API": {
+          "x": 1058,
+          "y": 1354
+        },
+        "Storefront": {
+          "x": 1058,
+          "y": 1904
+        },
+        "Core API": {
+          "x": 1958,
+          "y": 529
+        },
+        "Orders API": {
+          "x": 2858,
+          "y": 529
+        },
+        "Core DB": {
+          "x": 2858,
+          "y": 29
+        },
+        "Orders DB": {
+          "x": 3758,
+          "y": 529
+        },
+        "AI Gateway": {
+          "x": 2858,
+          "y": 1304
+        },
+        "LLM Provider": {
+          "x": 4658,
+          "y": 1304
+        },
+        "Payments System": {
+          "x": 4658,
+          "y": 1904
+        },
+        "Order Fulfillment System": {
+          "x": 2858,
+          "y": 1904
+        }
+      },
+      "relationships": {
+        "Core API -> Payments System": {
+          "position": 88
+        }
+      }
+    }
+  }
+}
