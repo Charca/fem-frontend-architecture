@@ -6,7 +6,8 @@ This folder stores versioned C4 diagrams as Structurizr DSL workspaces and expor
 
 - `v1/workspace.dsl` exports to `dist/v1/`
 - `v2/workspace.dsl` exports to `dist/v2/`
-- Additional versions follow the same pattern: create `v3/workspace.dsl`, then run the build.
+- `v3/workspace.dsl` exports to `dist/v3/`
+- Additional versions follow the same pattern: create `vN/workspace.dsl`, then run the build.
 
 ## Local build
 
@@ -32,12 +33,14 @@ Then open:
 
 - `http://localhost:8000/v1/`
 - `http://localhost:8000/v2/`
+- `http://localhost:8000/v3/`
 
 From the repository root, `npm run build` generates the Cloudflare Pages output with the diagrams mounted under `/diagrams`:
 
 - `diagrams/dist/diagrams/`
 - `http://localhost:8000/diagrams/v1/`
 - `http://localhost:8000/diagrams/v2/`
+- `http://localhost:8000/diagrams/v3/`
 
 ## Cloudflare Pages
 

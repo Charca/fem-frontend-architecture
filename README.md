@@ -15,6 +15,7 @@ The root build sets `DIAGRAMS_BASE_PATH=/diagrams`, so the generated static outp
 - `/diagrams/`
 - `/diagrams/v1/`
 - `/diagrams/v2/`
+- `/diagrams/v3/`
 
 Run the same build locally with:
 
