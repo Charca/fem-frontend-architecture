@@ -1,24 +1,30 @@
-# fem-frontend-architecture
+# Frontend Architecture: Monoliths to Micro-Frontends
 
-## Cloudflare Pages
+## Workshop Repos
 
-This repo deploys the nested diagrams app under `/diagrams`.
+- [frontend-architecture-monolith](https://github.com/Charca/frontend-architecture-monolith)
+- [frontend-architecture-monorepo](https://github.com/Charca/frontend-architecture-monorepo)
+- [frontend-architecture-micro-frontends](https://github.com/Charca/frontend-architecture-micro-frontends)
 
-Use these Cloudflare Pages settings:
+Clone all three repositories with this script:
 
-- Build command: `npm run build`
-- Build output directory: `diagrams/dist`
-- Node.js: v20 or newer
-
-The root build sets `DIAGRAMS_BASE_PATH=/diagrams`, so the generated static output is:
-
-- `/diagrams/`
-- `/diagrams/v1/`
-- `/diagrams/v2/`
-- `/diagrams/v3/`
-
-Run the same build locally with:
-
-```sh
-npm run build
+```bash
+mkdir -p frontend-architecture-workshop && cd frontend-architecture-workshop
+for repo in \
+  frontend-architecture-monolith \
+  frontend-architecture-monorepo \
+  frontend-architecture-micro-frontends
+do
+  git clone "https://github.com/Charca/${repo}.git"
+done
 ```
+
+## C4 Diagrams
+
+- [Diagram v1](https://fem-c4.pages.dev/diagrams/v1/)
+- [Diagram v2](https://fem-c4.pages.dev/diagrams/v2/)
+- [Diagram v3](https://fem-c4.pages.dev/diagrams/v3/)
+
+## Slides
+
+- [Slides](https://charca.dev/fem-slides)
